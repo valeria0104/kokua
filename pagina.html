@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/secciones.css">
+    <link rel="stylesheet" href="css/pagina1.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans Pro:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+    <title>KOKUA</title>
+</head>
+<body>
+<header>
+    <img class="logo" src="imagenes/panel/Simbolo.png" alt="Logo Kokua">
+    <nav>
+        <a class="secciones" href="#">NOSOTROS</a>
+        <a class="secciones" href="#">INICIAR SESIÓN</a>
+        <button class="seccionR">
+            REGISTRARSE
+        </button>
+    </nav>
+</header>
+<section class="panel">
+    <label> Voluntariados por el cambio:</label>
+    <br>
+    <label> Encuentra tu oportunidad</label>
+</section>
+<section class="Enunciado">
+    <div class="Parrafo">
+        <h2> ¡Bienvenido a nuestra plataforma <br>
+            &nbsp; &nbsp;de voluntariado KOKUA! </h2>
+        <p>Descubre emocionantes oportunidades para <br> marcar
+            la diferencia. Únete a nuestra red <br>comprometida
+            en crear un cambio positivo, <br>ya sea localmente o
+            en línea.</p>
+        <p style="font-weight: bold;"> ¡Únete hoy y haz del mundo un lugar mejor a<br>
+            través del voluntariado! </p>
+        <button> Encuentra tu voluntariado</button>
+    </div>
+    <div class="imagenes">
+        <img src="imagenes/accionesVerdes/Verde1.jpg" alt="Gente plantando"/>
+        <button class="flecha flecha-izquierda" onclick="cambiarImagen(-1)">&#10094;</button>
+        <button class="flecha flecha-derecha" onclick="cambiarImagen(1)">&#10095;</button>
+    </div>
+</section>
+<section class="panel2">
+    <nav>
+        <div class="seccion1">
+            <a class="secciones1" href="#">¿Quiénes somos y que hacemos?</a>
+        </div>
+        <div class="seccion2">
+            <a class="secciones1" href="#">Voluntarios</a>
+        </div>
+        <div class="seccion3">
+            <a class="secciones1" href="#">Organizaciones</a>
+        </div>
+    </nav>
+</section>
+<section class="beneficios">
+    <h1> ¿Qué beneficios brinda la plataforma de KOKUA?</h1>
+    <div>
+        <img class="simbolos1" src="imagenes/simbolos/informacion.png" alt="imformacion sobre Voluntariados">
+        <p>Toda la información <br>sobre voluntariados<br> en un solo lugar</p>
+    </div>
+    <div>
+        <img class="simbolos1" src="imagenes/simbolos/wifi.png" alt="disponibilidad">
+        <p>Información <br> disponible desde <br> cualquier lugar</p>
+    </div>
+    <div>
+        <img class="simbolos1" src="imagenes/simbolos/proteccion.png" alt="seguridad de informacion">
+        <p> Garantizamos<br> organizaciones verificadas <br>mediante un filtro preciso.</p>
+    </div>
+    <div class="SegundaLinea">
+        <img src="imagenes/simbolos/voluntariados.png" alt="diversos voluntariados">
+        <p>Diversos<br> voluntariados a elegir<br>  de acuerdo a tus <br>intereses.</p>
+    </div>
+    <div class="SegundaLinea">
+        <img src="imagenes/simbolos/facil.png" alt="facil de usar">
+        <p>La plataforma es fácil<br>  de utilizar, rápida e <br> intuitiva en su diseño.</p>
+    </div>
+</section>
+<section class="testimonios">
+    <h1>Testimonios</h1>
+    <div id="contenedor-testimonios" class="opinion">
+    </div>
+    <div class="navegacion-testimonios">
+        <!-- Los botones de navegación se agregarán dinámicamente aquí -->
+    </div>
+</section>
+<script>
+    let imagenIndex = 0;
+    const imagenes = ["imagenes/accionesVerdes/Verde1.jpg", "imagenes/accionesVerdes/Verde2.jpg"]; // Agrega las rutas de tus imágenes aquí
+
+    function cambiarImagen(delta) {
+        imagenIndex += delta;
+        if (imagenIndex < 0) {
+            imagenIndex = imagenes.length - 1;
+        } else if (imagenIndex >= imagenes.length) {
+            imagenIndex = 0;
+        }
+        const imagen = document.querySelector('.imagenes img');
+        imagen.src = imagenes[imagenIndex];
+    }
+
+
+    const testimonios = [
+        {
+            foto: "imagenes/testimonios/Primera.jpg",
+            opinion: "Ser voluntaria en Crea+ a través de Kokua ha sido gratificante. La plataforma facilita la búsqueda deoportunidades, y la variedad de proyectos brinda seguridadal contribuir. Estoy emocionada de ser parte de estacomunidad comprometida con el cambio positivo. - LauraGómez, Voluntaria en Patita Abandonada."
+        },
+        {
+            foto: "imagenes/testimonios/Segundo.jpg",
+            opinion: "Ser voluntaria en Crea+ a través de Kokua ha sido gratificante. La plataforma facilita la búsqueda deoportunidades, y la variedad de proyectos brinda seguridadal contribuir. Estoy emocionada de ser parte de estacomunidad comprometida con el cambio positivo. - LauraGómez, Voluntaria en Patita Abandonada."
+        },
+        // Agrega más testimonios si es necesario
+    ];
+
+    const contenedorTestimonios = document.getElementById('contenedor-testimonios');
+    const navegacionTestimonios = document.querySelector('.navegacion-testimonios');
+
+    testimonios.forEach((testimonio, index) => {
+        const testimonioDiv = document.createElement('div');
+        testimonioDiv.classList.add('testimonio');
+
+        const imagenTestimonio = document.createElement('img');
+        imagenTestimonio.src = testimonio.foto;
+        imagenTestimonio.alt = 'Foto del testimonio';
+
+        const parrafoTestimonio = document.createElement('p');
+        parrafoTestimonio.textContent = testimonio.opinion;
+
+        testimonioDiv.appendChild(imagenTestimonio);
+        testimonioDiv.appendChild(parrafoTestimonio);
+
+        contenedorTestimonios.appendChild(testimonioDiv);
+
+        const botonNavegacion = document.createElement('button');
+        botonNavegacion.classList.add('circulo');
+        botonNavegacion.addEventListener('click', () => mostrarTestimonio(index));
+        navegacionTestimonios.appendChild(botonNavegacion);
+    });
+
+    function mostrarTestimonio(index) {
+        const testimonios = document.querySelectorAll('.testimonio');
+        testimonios.forEach(testimonio => testimonio.style.display = 'none');
+        testimonios[index].style.display = 'block';
+        const circulos = document.querySelectorAll('.circulo');
+        circulos.forEach(circulo => circulo.classList.remove('activo'));
+        circulos[index].classList.add('activo');
+    }
+
+    mostrarTestimonio(0);
+</script>
+</body>
+</html>

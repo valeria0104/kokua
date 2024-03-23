@@ -1,0 +1,42 @@
+/* PRIMER LAYOUT*/
+header {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos del header */
+    border-bottom: 2px solid #333; /* Agrega un borde inferior de 2px sólido de color gris oscuro */
+    margin-bottom: 5px; 
+}
+
+.logo {
+    vertical-align: middle; /* Alinea verticalmente la imagen */
+    margin-right: 5%; /* Espacio a la derecha de la imagen */
+    width: 10%;
+    height: 10%;
+}
+nav{
+    flex-grow: 1; /* Hace que el nav ocupe el espacio restante */
+    display: flex;
+    justify-content: space-around; /* Distribuye los elementos de manera equitativa */
+    font-size: 100%;
+
+}
+.secciones{
+    text-decoration: none;
+    margin-top: 3%;
+    font-family: 'Roboto';
+    font-weight: bold;
+    
+}
+
+.seccionR{
+    text-decoration: none;
+    margin-top:2%;
+    font-size: 100% ;
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: white;
+    border-style: none;
+    background-color: #4DD7FA;
+    padding: 3px 20px; /* Añade relleno alrededor del texto */
+    border-radius: 5px 5px 5px 5px;
+
+}
